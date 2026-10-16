@@ -2,3 +2,4 @@
 # .nx/workflows/agents.yaml), so CI and local development get the same SDK.
 [tools]
 dotnet = "10"
+node = "24"

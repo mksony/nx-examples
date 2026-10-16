@@ -16,7 +16,8 @@ ln -s "$root/node_modules" "$wt/node_modules"
 chmod +x "$wt/.hooks/pre-commit"
 
 # Fresh daemon, uncached nx-ai-agents-config clone (cache lives in os.tmpdir()).
-export TMPDIR="$tmp/os-tmp"
+# Daemon env drops TMPDIR, so also set TMP (Node's next tmpdir fallback).
+export TMPDIR="$tmp/os-tmp" TMP="$tmp/os-tmp"
 mkdir -p "$TMPDIR"
 unset CI
 # ponytail: local Nx AI utils, skips daemon's `nx@latest` temp install; drop to test latest.

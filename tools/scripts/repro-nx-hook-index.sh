@@ -20,7 +20,7 @@ chmod +x "$wt/.hooks/pre-commit"
 export TMPDIR="$tmp/os-tmp" TMP="$tmp/os-tmp"
 mkdir -p "$TMPDIR"
 unset CI
-# ponytail: local Nx AI utils, skips daemon's `nx@latest` temp install; drop to test latest.
+
 export NX_USE_LOCAL="${NX_USE_LOCAL:-true}"
 cd "$wt"
 node_modules/.bin/nx daemon --stop >/dev/null 2>&1 || true
